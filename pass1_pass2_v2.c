@@ -49,7 +49,6 @@ int main() {
         scanf("%s", input);
         pass1(); // Invoke pass1() function for processing macros
     }
-
     return 0;
 }
 
