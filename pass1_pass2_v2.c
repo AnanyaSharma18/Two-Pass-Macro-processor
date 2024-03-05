@@ -37,8 +37,9 @@ int main() {
 
 // Pass 1: Macro definition and expansion
 void pass1() {
-    char input[MAX_BODY_LENGTH];
     int i;
+    char input[MAX_BODY_LENGTH];
+
     printf("Enter the macro definitions (MEND to end):\n");
 
     // Loop until "MEND" is encountered or MDT is full
@@ -58,31 +59,31 @@ void pass1() {
 
         // Update MNT entry
         mnt[mntc].index = mdtc;
-        
+
         // Increment MDT and MNT count
         mdtc++;
         mntc++;
     }
 
     printf("Macro Definition Table (MDT):\n");
-    for ( i = 0; i < mdtc; i++) {
+    for (i = 0; i < mdtc; i++) {
         printf("MDT: %d %s\n", mdt[i].index, mdt[i].body);
     }
 
     printf("Macro Name Table (MNT):\n");
-    for ( i = 0; i < mntc; i++) {
+    for (i = 0; i < mntc; i++) {
         printf("MNT: %s %d\n", mnt[i].name, mnt[i].index);
     }
 }
 
 // Pass 2: Process instructions and expand macros
 void pass2() {
+    int i,j;
     char input[MAX_BODY_LENGTH];
-	int i,j;
     printf("Enter the instructions to process (END to end):\n");
 
     // Loop until "END" is encountered or maximum instructions
-    for ( i = 0; i < MAX_INSTRUCTIONS; i++) {
+    for (i = 0; i < MAX_INSTRUCTIONS; i++) {
         printf("Enter instruction %d: ", i + 1);
         scanf("%s", input);
 
